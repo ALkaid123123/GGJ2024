@@ -10,7 +10,7 @@ public class AddButton : MonoBehaviour
 	// Start is called before the first frame update
 	void Start()
 	{
-		int btnPos = 0; //第一个Button的Y轴位置
+		int btnPos = 10; //第一个Button的Y轴位置
 		int btnHeight = 30; //Button的高度
 		int btnCount = 100; //Button的数量
 
@@ -30,6 +30,7 @@ public class AddButton : MonoBehaviour
 			goClone.transform.localScale = new Vector3(1, 1, 1);    //由于克隆的Button缩放被设置为0，所以这里要设置为1
 			goClone.transform.localPosition = new Vector3(0, btnPos, 0);
 			goClone.transform.Find("Text").GetComponent<Text>().text = text;
+			goClone.transform.Find("Text").GetComponent<Text>().fontSize = 3;
 			goClone.GetComponent<Button>().onClick.AddListener
 			(
 				() =>
